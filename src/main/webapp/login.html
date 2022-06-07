@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+</head>
+
+<body>
+<form id="auth-form">
+    <label for="username">Gebruikersnaam: </label><input type="text" name="username" id="username">
+    <label for="password">Wachtwoord: </label><input type="text" name="password" id="password">
+    <input type="button" value="login" id="login">
+</form>
+<script type="text/javascript">
+    function login() {
+        let formData = new FormData(document.querySelector("#auth-form"));
+
+        let jsonRequestBody = {}
+
+        formData.forEach(function(value, key){
+            jsonRequestBody[key] = value;
+        });
+
+        fetch("restservices/authenticatie", {
+            method: 'POST',
+            // mode: 'cors', // no-cors, *cors, same-origin
+            // cache: 'no-cache',
+            // headers: {
+            //     'Content-Type': 'application/json'
+            // },
+            body: JSON.stringify(jsonRequestBody)
+        })
+            .then(function (response) {
+                if (response.ok) return response.json();
+                else throw "Wrong username/password";
+            }).then(myJson => window.sessionStorage.setItem("myJWT", myJson.JWT))
+            .catch(err => console.log(err));
+
+    }
+
+    document.querySelector("#login").addEventListener("click", login);
+</script>
+</body>
+
+</html>
