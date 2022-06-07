@@ -14,7 +14,7 @@ Content-Type: application/json
 
 ###
 GET http://localhost:8080/restservices/list
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdHJvbnQiLCJleHAiOjE2NTQxNjk3NzgsInJvbGUiOiJhZG1pbiJ9.hq6bCHemKU8x3LzvURTAM98aZusTcBMFibSyTR57JW3stnIr11-H3-_hS3iNDFOsrheynZ8kwUNVypqqueR1JQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdHJvbnQiLCJleHAiOjE2NTQ2MDUwOTgsInJvbGUiOiJhZG1pbiJ9.VqvkDAi0bYbdwfZmIhj8AlXrfvJR-m2afaFtMAtstUhPke1I7jMBXPb6oqUCa2xaW3l8XqWS5kw_PGrReP0ZBQ
 
 
 
